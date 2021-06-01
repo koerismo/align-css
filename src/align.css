@@ -92,8 +92,8 @@ input {
 	margin: var(--margin-med);
 	padding:  var(--padding-med);
 	transition: box-shadow 0.15s ease-out;
-	box-shadow:  0 0 0 0px var(--color-highlight-transparent) inset
-				 0 0 0 0px var(--color-highlight-transparent) inset;
+	box-shadow:  0 0 0 0 var(--color-highlight-transparent) inset
+				 0 0 0 0 var(--color-highlight-transparent) inset;
 }
 input:focus {
 	outline: none;
@@ -115,8 +115,8 @@ input:focus {
 
 .divide 								{ display: flex;											}
 .divide.vertical > * 					{ border-top: var(--border-light);							}
-.divide.vertical > *:nth-child(1) 	{ border-top: none; vertical-align:  center; 					}
-.divide.horizontal > * 				{ border-left: var(--border-light);								}
+.divide.vertical > *:nth-child(1) 		{ border-top: none; vertical-align:  center; 				}
+.divide.horizontal > * 					{ border-left: var(--border-light);							}
 .divide.horizontal > *:nth-child(1) 	{ border-left: none; 										}
 
 .gizmo			{ border: var(--border-dark); border-radius: var(--border-radius); margin: var(--margin-med); overflow: hidden; }
@@ -124,19 +124,22 @@ input:focus {
 .inline			{ padding: 0 !important; display: flex; background: var(--background-light); }
 .inline > *		{ border: none; outline: none; border-radius: 0; margin: 0; display: flex; }
 
-.padding-none		{ padding: 0 !important; }
-.padding-min		{ padding: var(--padding-min) !important; }
-.padding-med		{ padding: var(--padding-med) !important; }
-.padding-max		{ padding: var(--padding-max) !important; }
-
-.margin-none		{ margin: 0 !important; }
-.margin-min		{ margin: var(--margin-min) !important; }
-.margin-med		{ margin: var(--margin-med) !important; }
-.margin-max		{ margin: var(--margin-max) !important; }
-
 .shadowed 		{ box-shadow: var(--shadow-small); }
 
-.stretch		{ flex-grow: 1;		}
-.shrink			{ flex-shrink: 1;	}
+.padding-none	{ padding: 0 !important;					}
+.padding-min	{ padding: var(--padding-min) !important;	}
+.padding-med	{ padding: var(--padding-med) !important;	}
+.padding-max	{ padding: var(--padding-max) !important;	}
 
-.center { margin: auto; text-align: center; }
+.margin-none	{ margin: 0 !important;						}
+.margin-min		{ margin: var(--margin-min) !important; 	}
+.margin-med		{ margin: var(--margin-med) !important; 	}
+.margin-max		{ margin: var(--margin-max) !important; 	}
+
+.stretch		{ flex-grow: 1;								}
+.shrink			{ flex-shrink: 1;							}
+.center 		{ margin: auto; text-align: center;			}
+
+.mwidth-min		{ max-width: 20em;							}
+.mwidth-med		{ max-width: 40em;							}
+.mwidth-max		{ max-width: 60em;							}
