@@ -68,7 +68,7 @@ body {
 
 nav { border-bottom: var(--border-dark); border-top: var(--border-dark) }
 th { background: var(--background-dark); font-weight:  normal;	}
-td { background: var(--background-light); 						}
+td { background: var(--background-light); text-align: center;	}
 
 table { border-collapse: collapse; }
 table td, table th { border: var(--border-light); padding: var(--padding-med); }
@@ -102,6 +102,8 @@ input:focus {
 	color: var(--text-dark);
 }
 
+.vertical span, .horizontal span { padding: var(--padding-med); }
+
 
 /* Class-Based Elements */
 
@@ -111,11 +113,11 @@ input:focus {
 .vertical > * 		{		height: 100%;											}
 .vertical.reverse 	{ 		display: flex; flex-direction: column-reverse; 			}
 
-.list 								{ display: flex;												}
-.list.vertical > * 					{ border-top: var(--border-light); padding: var(--padding-med); }
-.list.vertical > *:nth-child(1) 	{ border-top: none; vertical-align:  center; 					}
-.list.horizontal > * 				{ border-left: var(--border-light); padding: var(--padding-med);}
-.list.horizontal > *:nth-child(1) 	{ border-left: none; 											}
+.divide 								{ display: flex;											}
+.divide.vertical > * 					{ border-top: var(--border-light);							}
+.divide.vertical > *:nth-child(1) 	{ border-top: none; vertical-align:  center; 					}
+.divide.horizontal > * 				{ border-left: var(--border-light);								}
+.divide.horizontal > *:nth-child(1) 	{ border-left: none; 										}
 
 .gizmo			{ border: var(--border-dark); border-radius: var(--border-radius); margin: var(--margin-med); overflow: hidden; }
 
