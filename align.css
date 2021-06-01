@@ -28,7 +28,7 @@
 	--font-sans-serif: sans-serif;
 	--font-serif: serif;
 
-	--shadow-small: 1px 4px 6px 0 #0001;
+	--shadow-small: 2px 3px 4px 0 #0002;
 }
 
 /* Dark mode */
@@ -91,13 +91,14 @@ input {
 	border-radius: var(--border-radius);
 	margin: var(--margin-med);
 	padding:  var(--padding-med);
-	transition: box-shadow 0.1s ease-out;
-	box-shadow:  0 0 0 0px var(--color-highlight-transparent) inset;
+	transition: box-shadow 0.15s ease-out;
+	box-shadow:  0 0 0 0px var(--color-highlight-transparent) inset
+				 0 0 0 0px var(--color-highlight-transparent) inset;
 }
 input:focus {
-	outline: 1px solid var(--color-highlight);
-	box-shadow: 0 0 0 3px var(--color-highlight-transparent) inset;
-	background: var(--background-light);
+	outline: none;
+	box-shadow: 0 0 0 4px var(--color-highlight-transparent) inset,
+				0 0 0 1px var(--color-highlight) inset;
 	color: var(--text-dark);
 }
 
@@ -117,7 +118,9 @@ input:focus {
 .list.horizontal > *:nth-child(1) 	{ border-left: none; 											}
 
 .gizmo			{ border: var(--border-dark); border-radius: var(--border-radius); margin: var(--margin-med); overflow: hidden; }
-.inline			{ border: none; outline: none; border-radius: 0; margin: 0; flex-grow: 1; }
+
+.inline			{ padding: 0 !important; display: flex; background: var(--background-light); }
+.inline > *		{ border: none; outline: none; border-radius: 0; margin: 0; display: flex; }
 
 .padding-none		{ padding: 0 !important; }
 .padding-min		{ padding: var(--padding-min) !important; }
@@ -133,3 +136,5 @@ input:focus {
 
 .stretch		{ flex-grow: 1;		}
 .shrink			{ flex-shrink: 1;	}
+
+.center { margin: auto; text-align: center; }
