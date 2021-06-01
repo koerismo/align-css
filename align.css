@@ -1,0 +1,135 @@
+:root {
+	--text-light: #444;
+	--text-dark: #222;
+
+	--text-link-disabled: #555;
+	--text-link-enabled: #3c86e6;
+
+	--color-highlight: #69aaff;
+	--color-highlight-transparent: #3c86e638;
+
+	--background-light: #fff;
+	--background-dark: #f4f4f4;
+
+	--border-light: 1px solid #ddd;
+	--border-dark: 1px solid #aaa;
+	--border-radius:  5px;
+
+	--padding-none: 0px;
+	--padding-min: 5px;
+	--padding-med: 10px;
+	--padding-max: 15px;
+
+	--margin-none:  0px;
+	--margin-min:  5px;
+	--margin-med: 10px;
+	--margin-max:  15px;
+
+	--font-sans-serif: sans-serif;
+	--font-serif: serif;
+
+	--shadow-small: 1px 4px 6px 0 #0001;
+}
+
+/* Dark mode */
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--text-light: #aaa;
+		--text-dark: #fff;
+		--text-link-disabled: #939393;
+		--text-link-enabled: #5dc2ff;
+		--background-light: #222328;
+		--background-dark: #1c1d22;
+		--border-light: 1px solid #ffffff20;
+		--border-dark: 1px solid #fff3;
+		--shadow-small: 1px 4px 6px 0 #0001;
+	}
+}
+
+/* Body Setup */
+
+body {
+	display:  flex;
+	flex-direction: column;
+
+	margin:  0;
+	padding:  0;
+
+	background: var(--background-light);
+	color:  var(--text-light);
+
+	font-family: var(--font-sans-serif);
+	font-weight:  lighter;
+}
+
+
+/* Modifications to Existing Elements */
+
+nav { border-bottom: var(--border-dark); border-top: var(--border-dark) }
+th { background: var(--background-dark); font-weight:  normal;	}
+td { background: var(--background-light); 						}
+
+table { border-collapse: collapse; }
+table td, table th { border: var(--border-light); padding: var(--padding-med); }
+table tr:nth-child(1) > * { border-top: none; }
+table tr:last-child > * { border-bottom: none; }
+table tr > *:nth-child(1) { border-left: none; }
+table tr > *:last-child { border-right: none; }
+
+nav {background: var(--background-dark); padding: var(--padding-med); border-bottom: var(--border-dark); }
+nav > img { height: 32px; }
+nav > * { margin-top:  auto; margin-bottom:  auto; }
+
+a { padding: var(--padding-min); text-decoration: none; color: var(--text-link-disabled); }
+a[href] { color: var(--text-link-enabled); }
+
+input {
+	background: var(--background-dark);
+	color: var(--text-light);
+	border: var(--border-light);
+	border-radius: var(--border-radius);
+	margin: var(--margin-med);
+	padding:  var(--padding-med);
+	transition: box-shadow 0.1s ease-out;
+	box-shadow:  0 0 0 0px var(--color-highlight-transparent) inset;
+}
+input:focus {
+	outline: 1px solid var(--color-highlight);
+	box-shadow: 0 0 0 3px var(--color-highlight-transparent) inset;
+	background: var(--background-light);
+	color: var(--text-dark);
+}
+
+
+/* Class-Based Elements */
+
+.horizontal 		{ 		display: flex; flex-direction: row; flex-wrap: wrap;	}
+.horizontal.reverse { 		display: flex; flex-direction: row-reverse; 			}
+.vertical 			{ 		display: flex; flex-direction: column; 					}
+.vertical > * 		{		height: 100%;											}
+.vertical.reverse 	{ 		display: flex; flex-direction: column-reverse; 			}
+
+.list 								{ display: flex;												}
+.list.vertical > * 					{ border-top: var(--border-light); padding: var(--padding-med); }
+.list.vertical > *:nth-child(1) 	{ border-top: none; vertical-align:  center; 					}
+.list.horizontal > * 				{ border-left: var(--border-light); padding: var(--padding-med);}
+.list.horizontal > *:nth-child(1) 	{ border-left: none; 											}
+
+.gizmo			{ border: var(--border-dark); border-radius: var(--border-radius); margin: var(--margin-med); overflow: hidden; }
+.inline			{ border: none; outline: none; border-radius: 0; margin: 0; flex-grow: 1; }
+
+.padding-none		{ padding: 0 !important; }
+.padding-min		{ padding: var(--padding-min) !important; }
+.padding-med		{ padding: var(--padding-med) !important; }
+.padding-max		{ padding: var(--padding-max) !important; }
+
+.margin-none		{ margin: 0 !important; }
+.margin-min		{ margin: var(--margin-min) !important; }
+.margin-med		{ margin: var(--margin-med) !important; }
+.margin-max		{ margin: var(--margin-max) !important; }
+
+.shadowed 		{ box-shadow: var(--shadow-small); }
+
+.stretch		{ flex-grow: 1;		}
+.shrink			{ flex-shrink: 1;	}
