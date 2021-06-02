@@ -28,7 +28,7 @@
 	--font-sans-serif: sans-serif;
 	--font-serif: serif;
 
-	--shadow-small: 2px 3px 4px 0 #0002;
+	--shadow-small: 1px 2px 3px 0 #0002;
 }
 
 /* Dark mode */
@@ -107,6 +107,29 @@ input:focus {
 	color: var(--text-dark);
 }
 
+button {
+	border: 1px solid var(--text-link-enabled);
+	border-radius: var(--border-radius);
+	background: var(--background-light);
+	color:  var(--text-link-enabled);
+	padding: var(--padding-min);
+	margin: var(--margin-min);
+}
+button[disabled] {
+	color: var(--text-link-disabled);
+	border-color: var(--text-link-disabled);
+}
+button[disabled]:hover {
+	background: var(--background-light);
+	color: var(--text-link-disabled);
+	border-color: var(--text-link-disabled);
+}
+button:hover {
+	border: 1px solid #fff0;
+	background: var(--text-link-enabled);
+	color:  var(--background-light);
+}
+
 .vertical span, .horizontal span { padding: var(--padding-med); }
 
 
@@ -116,6 +139,7 @@ input:focus {
 .horizontal.reverse { 		display: flex; flex-direction: row-reverse; 			}
 .vertical 			{ 		display: flex; flex-direction: column; 					}
 .vertical > * 		{		height: 100%;											}
+.vertical > span	{		height:  auto;											}
 .vertical.reverse 	{ 		display: flex; flex-direction: column-reverse; 			}
 
 .divide 								{ display: flex;											}
