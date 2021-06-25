@@ -173,10 +173,17 @@ button:hover {
 
 .gizmo			{ border: var(--border-dark); border-radius: var(--border-radius); margin: var(--margin-med); overflow: hidden; }
 
-.inline			{ padding: 0 !important; display: flex; background: var(--background-light); }
-.inline > *		{ border: none; outline: none; border-radius: 0; margin: 0; display: flex; }
+.inline			{ padding: 0 !important; display: flex; background: var(--background-light);	}
+.inline > *		{ border: none; outline: none; border-radius: 0; margin: 0; display: flex;		}
 
-.shadowed 		{ box-shadow: var(--shadow-small); }
+.shadowed 				{ box-shadow: var(--shadow-small);	}
+
+.invert-when-light						{ filter: invert(1); }
+.invert-when-dark						{ filter: invert(0); }
+@media (prefers-color-scheme: dark) {
+	.invert-when-light					{ filter: invert(0); }
+	.invert-when-dark					{ filter: invert(1); }
+}
 
 .padding-none	{ padding: 0 !important;					}
 .padding-min	{ padding: var(--padding-min) !important;	}
